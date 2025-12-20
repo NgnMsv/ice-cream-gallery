@@ -40,6 +40,25 @@
         .max-width-wrapper {
           @apply max-w-5xl mx-auto px-4;
         }
+        .gradient-border {
+          @apply relative
+            before:content-['']
+            before:absolute before:inset-0
+            before:primary-gradient
+            before:rounded-md
+            before:-z-10
+            before:transition-transform before:duration-300
+            hover:before:scale-105;
+        }
+      }
+
+      @layer components {
+        .ice-cream {
+          @apply gradient-border;
+        }
+        .ice-cream img {
+          @apply w-72 h-60 rounded-md object-cover; 
+        }
       }
     </style>
   </head>
@@ -62,5 +81,25 @@
       <img src="images/hero.jpg" id="hero-image" class="h-full w-96 object-cover" />
       <img src="images/wave.svg" id="hero-wave" class="absolute bottom-0 w-full max-h-40 " />
     </div>
+    <main class="max-width-wrapper py-10 lg:py-20 flex justify-center flex-wrap gap-4 md:gap-6 lg:gap-8">
+      <figure class="ice-cream">
+        <img src="./images/1.jpg" />
+      </figure>
+      <figure class="ice-cream">
+        <img src="./images/2.jpg" />
+      </figure>
+      <figure class="ice-cream">
+        <img src="./images/3.jpg" />
+      </figure>
+      <figure class="ice-cream">
+        <img src="./images/4.jpg" />
+      </figure>
+      <figure class="ice-cream">
+        <img src="./images/5.jpg" />
+      </figure>
+      <figure class="ice-cream">
+        <img src="./images/6.jpg" />
+      </figure>
+    </main>
   </body>
 </html>
